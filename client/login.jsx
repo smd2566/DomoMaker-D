@@ -79,9 +79,23 @@ const SignupWindow = (props) => {
     );
 };
 
+
+const AboutWindow = (props) => {
+    return(
+        <form id= "aboutForm"
+            name="aboutForm"
+            className="mainForm"
+        >
+            <h2>A domo is a monster that you can create! Give it a name, an age and a level. Be sure to
+                create an account before doing so!</h2>
+        </form>
+    );
+};
+
 const init = () => {
     const loginButton = document.getElementById('loginButton');
     const signupButton = document.getElementById('signupButton');
+    const aboutButton = document.getElementById('aboutButton');
 
     const root = createRoot(document.getElementById('content'));
 
@@ -96,6 +110,14 @@ const init = () => {
         root.render( <SignupWindow />);
         return false;
     });
+
+    aboutButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        root.render( <AboutWindow />);
+        return false;
+    });
+
+    
 
     root.render( <LoginWindow /> );
 };
